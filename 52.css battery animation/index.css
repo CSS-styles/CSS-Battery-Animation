@@ -1,0 +1,83 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+	width: 100%;
+	background-color: #262626FF;
+}
+.battery{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+	height: 300px;
+	width: 150px;
+	border: 5px solid white;
+	border-radius: 10px;
+	box-shadow: 1px 1px 60px black;
+}
+.box{
+	position: absolute;
+	height: 30px;
+	width: 50px;
+	bottom: 100%;
+	background-color: white;
+}
+span{
+	height: 20%;
+	width: 95%;
+	margin: 5px;
+	border-radius: 10px;
+	animation: anime 4s linear infinite;
+}
+.battery::after{
+	content: '';
+	display: block;
+	position: absolute;
+	height: 100%;
+	width: 95%;
+	top: 0;
+	background-color: #262626FF;
+	animation: battery 4s linear infinite;
+}
+@keyframes anime{
+	0%{
+		background-color: red;
+	}
+	25%{
+		background-color: orange;
+	}
+	50%{
+		background-color: yellow;
+	}
+	100%{
+		background-color: limegreen;
+	}
+}
+@keyframes battery{
+	0%{
+		height: 100%;
+	}
+	20%{
+		height: 80%;
+	}
+	40%{
+		height: 60%;
+	}
+	60%{
+		height: 40%;
+	}
+	80%{
+		height: 20%;
+	}
+	100%{
+		height: 0%;
+	}
+}
